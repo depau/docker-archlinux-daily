@@ -1,0 +1,26 @@
+---
+kind: pipeline
+type: docker
+name: default
+platform:
+  os: linux
+  arch: armqs64
+
+steps:
+  - name: build-image
+    image: plugins/docker
+    environment:
+      TZ: Europe/Rome
+    settings:
+      dockerfile: Dockerfile.arm64v8
+      build_args:
+        - --platform
+        - linux/arm64
+      purge: true
+      username: depau
+      password:
+        from_secret: docker_password
+      repo: depau/archlinux-daily
+      tags:
+        - latest
+        - aarch64
