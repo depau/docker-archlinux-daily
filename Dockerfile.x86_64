@@ -1,0 +1,26 @@
+FROM archlinux:latest
+
+WORKDIR /archlinux
+
+RUN mkdir -p /archlinux/rootfs
+
+COPY pacstrap-docker /archlinux/
+COPY rootfs/archlinux/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
+
+RUN ./pacstrap-docker /archlinux/rootfs \
+	bash sed gzip pacman base base-devel
+
+# Remove current pacman database, likely outdated very soon
+RUN rm rootfs/var/lib/pacman/sync/*
+
+FROM scratch
+COPY --from=0 /archlinux/rootfs/ /
+COPY rootfs/archlinux/ /
+
+ENV LANG=en_US.UTF-8
+
+RUN locale-gen
+RUN pacman-key --init
+RUN pacman-key --populate archlinux
+
+CMD ["/usr/bin/bash"]
