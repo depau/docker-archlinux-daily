@@ -17,9 +17,6 @@ steps:
       TZ: Europe/Rome
     settings:
       dockerfile: Dockerfile.aarch64
-      build_args:
-        - --platform
-        - linux/arm64
       purge: true
       username: depau
       password:
