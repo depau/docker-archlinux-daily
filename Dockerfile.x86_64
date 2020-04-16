@@ -8,7 +8,7 @@ COPY rootfs/archlinux/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
 COPY pacstrap-docker /archlinux/
 
 RUN ./pacstrap-docker /archlinux/rootfs \
-	bash sed gzip pacman base base-devel
+	bash sed gzip pacman
 
 # Remove current pacman database, likely outdated very soon
 RUN rm rootfs/var/lib/pacman/sync/*
