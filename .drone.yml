@@ -2,9 +2,13 @@
 kind: pipeline
 type: docker
 name: default
+
 platform:
   os: linux
   arch: armqs64
+
+node:
+  qemu: no
 
 steps:
   - name: build-image
