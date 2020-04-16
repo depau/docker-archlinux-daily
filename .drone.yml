@@ -16,7 +16,7 @@ steps:
     environment:
       TZ: Europe/Rome
     settings:
-      dockerfile: Dockerfile.arm64v8
+      dockerfile: Dockerfile.aarch64
       build_args:
         - --platform
         - linux/arm64
