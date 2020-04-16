@@ -53,5 +53,4 @@ steps:
         from_secret: docker_password
       repo: depau/archlinux-daily
       tags:
-        - latest
         - x86_64
