@@ -40,7 +40,7 @@ platform:
 node:
   qemu: no
 
-steps:busybox sh -c "while [ 1 -eq 1 ]; do sleep 1; done"
+steps:
   - name: build-image
     image: plugins/docker
     environment:
