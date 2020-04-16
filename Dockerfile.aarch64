@@ -1,4 +1,4 @@
-FROM agners/archlinuxarm-arm64v8
+FROM depau/archlinux-daily:aarch64
 
 WORKDIR /archlinux
 
