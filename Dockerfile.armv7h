@@ -4,8 +4,8 @@ WORKDIR /archlinux
 
 RUN mkdir -p /archlinux/rootfs
 
-COPY pacstrap-docker /archlinux/
 COPY rootfs/alarm/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
+COPY pacstrap-docker /archlinux/
 
 RUN ./pacstrap-docker /archlinux/rootfs \
 	bash sed gzip pacman base base-devel
