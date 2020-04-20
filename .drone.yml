@@ -7,9 +7,6 @@ platform:
   os: linux
   arch: arm64
 
-node:
-  qemu: no
-
 steps:
   - name: build-image
     image: plugins/docker
@@ -33,9 +30,6 @@ name: archlinux-x86_64
 platform:
   os: linux
   arch: amd64
-
-node:
-  qemu: no
 
 steps:
   - name: build-image
