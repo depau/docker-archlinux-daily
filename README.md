@@ -1,3 +1,11 @@
+Builds here: https://cloud.drone.io/Depau/docker-archlinux-daily/
+
+Docker repo: https://hub.docker.com/repository/docker/depau/archlinux-daily
+
+---
+
+Original readme:
+
 # Basic Arch Linux ARM Docker images [![Build Status](https://travis-ci.org/agners/archlinuxarm-docker.svg?branch=master)](https://travis-ci.org/agners/archlinuxarm-docker)
 
 Docker images for Arch Linux ARM on AArch32 (ARMv7-A) and AArch64 (ARMv8-A). Built using native pacman and Docker multi-stage builds. Builds weekly by Travis CI on publicly visible infrastructure using Qemu emulation.
