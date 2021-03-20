@@ -5,6 +5,7 @@ WORKDIR /archlinux
 RUN mkdir -p /archlinux/rootfs
 
 COPY rootfs/alarm/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
+COPY rootfs/archlinux/etc/pacman.conf /etc/pacman.conf
 COPY pacstrap-docker /archlinux/
 
 RUN ./pacstrap-docker /archlinux/rootfs \
