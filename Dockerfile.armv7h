@@ -7,6 +7,7 @@ RUN mkdir -p /archlinux/rootfs
 COPY rootfs/alarm/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
 COPY pacstrap-docker /archlinux/
 
+RUN pacman -Sy && pacman -S --noconfirm archlinuxarm-keyring && yes | pacman -Syu --noconfirm
 RUN ./pacstrap-docker /archlinux/rootfs \
 	bash sed gzip pacman
 

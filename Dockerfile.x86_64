@@ -8,6 +8,7 @@ COPY rootfs/archlinux/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
 COPY rootfs/archlinux/etc/pacman.conf /etc/pacman.conf
 COPY pacstrap-docker /archlinux/
 
+RUN pacman -Sy && pacman -S --noconfirm archlinux-keyring && yes | pacman -Syu --noconfirm
 RUN ./pacstrap-docker /archlinux/rootfs \
 	bash sed gzip pacman
 
